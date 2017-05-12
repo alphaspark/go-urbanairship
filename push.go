@@ -9,7 +9,12 @@ type Push struct {
 }
 
 type Notification struct {
-	Alert string `json:"alert"`
+	Alert      string      `json:"alert"`
+	IOS        interface{} `json:"ios,omitempty"`
+	Android    interface{} `json:"android,omitempty"`
+	BlackBerry interface{} `json:"blackberry,omitempty"`
+	WNS        interface{} `json:"wns,omitempty"`
+	MPNS       interface{} `json:"mpns,omitempty"`
 }
 
 func (c *Client) Push(push interface{}) (*http.Response, error) {
